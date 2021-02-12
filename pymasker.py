@@ -5,8 +5,10 @@ https://github.com/haoliangyu/pymasker/blob/master/pymasker.py
 @author: thomasgumbricht
 '''
 
+# Standard library imports
+
 import os
-import numpy as np
+
 
 class Masker(object):
     '''Provides access to functions that produces masks from remote sensing image, according to its bit structure.'''

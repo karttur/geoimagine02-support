@@ -2,11 +2,13 @@
 Created on 7 Oct 2018
 
 @author: thomasgumbricht
-'''
-import numpy as np
-#All of the follwing are used to calculate earth-sun distance, adapted from
 
-#http://davit.ece.vt.edu/davitpy/_modules/utils/calcSun.html#calcSunRadVector
+# Adapted from: http://davit.ece.vt.edu/davitpy/_modules/utils/calcSun.html#calcSunRadVector
+'''
+
+# Third party imports
+
+import numpy as np
 
 def calcGeomMeanAnomalySun( t ):
     """ Calculate the Geometric Mean Anomaly of the Sun (in degrees)     """
@@ -35,7 +37,6 @@ def calcSunTrueAnomaly( t ):
     v = m + c
     return v # in degrees
 
-# Calculate earth-sun distance in AE, adapted from 
 def EarthSunDist(t):
     #eccent = 0.01672592        # Eccentricity of Earth orbit
     #axsmaj = 1.4957            # Semi-major axis of Earth orbit (km)

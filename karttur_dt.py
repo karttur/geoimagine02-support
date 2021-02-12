@@ -4,7 +4,8 @@ Created on 24 Dec 2017
 @author: thomasgumbricht
 '''
 
-#imports
+# Standard library imports
+
 import datetime
 
 def Now():

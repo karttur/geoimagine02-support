@@ -3,9 +3,14 @@ Created on 27 apr. 2018
 
 @author: thomasgumbricht
 '''
-from support import karttur_dt as mj_dt
+
+# Package application imports
+
+from geoimagine.support import karttur_dt as mj_dt
 
 def ConvertMODISTilesToStr(hv):
+    ''' Convert MODIS htile / vtile to a standardized string
+    '''
     if hv[0] < 10:
         pathStr = 'h0%(h)d' %{'h': hv[0]}
     else:
@@ -21,6 +26,8 @@ def ConvertMODISTilesToStr(hv):
     return D
 
 def DisentangleModisTileName(modisFN):
+    '''
+    '''
     product, AdatumDoy, hvstr, version, id = modisFN.split('.')
     datumDoy = AdatumDoy.replace('A','')
     source = '%(p)sv%(v)s' %{'p':product, 'v':version}

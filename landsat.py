@@ -5,6 +5,8 @@ Created on 7 Oct 2018
 '''
 
 def ConvertLandsatScenesToStr(pr):
+    ''' Convert wrs path and row to a standardized string
+    '''
     if pr[0] < 10:
         pathStr = 'p00%(p)d' %{'p': pr[0]}
     elif pr[0] < 100:
