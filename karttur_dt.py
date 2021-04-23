@@ -83,6 +83,9 @@ def DeltaTime(thisdate,deltadays):
 def SetYYYY1Jan(year):
     return datetime.datetime(year=year, month=1, day=1).date()
 
+def ResetDateToYYYYMM01(date):
+    return datetime.datetime(year=date.year, month=date.month, day=1).date()
+
 def DateToYYYYDOY(date):
     doy = YYYYDOYStr(date)
     yyyydoyStr = '%(y)d%(doy)s' %{'y':date.year,'doy':doy}
@@ -103,6 +106,12 @@ def YYYYMMtoYYYYMMDD(yyyymmStr,d):
         d = monthrange(y, m)[1]
     dt = datetime.datetime(y,m,d)
     return dt.date()
+
+def DateToYYYYMM(date):
+    y = '%(y)d' %{'y':date.year}
+    m = MonthToStr(date.month)
+    return '%s%s' %(y,m)
+    
 
 def GetLastDayOfMonth(y,m):
     from calendar import monthrange

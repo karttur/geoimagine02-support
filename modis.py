@@ -8,7 +8,7 @@ Created on 27 apr. 2018
 
 from geoimagine.support import karttur_dt as mj_dt
 
-def ConvertMODISTilesToStr(hv):
+def ConvertHVstring(hv):
     ''' Convert MODIS htile / vtile to a standardized string
     '''
     if hv[0] < 10:
@@ -23,6 +23,28 @@ def ConvertMODISTilesToStr(hv):
     values = [hv[0], hv[1], pathStr, rowStr, pathrowStr]
     params = ['p','r','pstr','rstr','prstr']
     D = dict(zip(params,values))
+    return D
+
+def ConvertHVinteger(h,v):
+    ''' Convert MODIS htile / vtile to a standardized string
+    '''
+    if h < 10:
+        pathStr = 'h0%(h)d' %{'h': h}
+    else:
+        pathStr = 'h%(h)d' %{'h': h}
+    if v < 10:
+        rowStr = 'v0%(v)d' %{'v': v}
+    else:
+        rowStr = 'v%(v)d' %{'v': v}
+        
+    pathrowStr = '%(h)s%(v)s' %{'h':pathStr,'v':rowStr}
+    
+    values = [h, v, pathStr, rowStr, pathrowStr]
+    
+    params = ['p','r','pstr','rstr','prstr']
+    
+    D = dict(zip(params,values))
+    
     return D
 
 def DisentangleModisTileName(modisFN):
